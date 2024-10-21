@@ -2,7 +2,7 @@
 /*
 Plugin Name: Accessibility Lite - SEO Friendly Super Lightweight WordPress Plugin
 Description: Accessibility Lite  ♿  is a lightweight SEO Friendly, WCAG compliant accessibility plugin that makes your website accessible for people with disabilities.
-Version: 3.8.3
+Version: 3.8.4
 Plugin URI: https://wordpress.org/plugins/accessibility-light/
 Author: Sitelinx
 Author URI: https://seo.sitelinx.co.il
@@ -334,9 +334,9 @@ function tbs_acl_rating_admin_notice(){
 					} else {
 
 						if(!empty($_POST["emailadid"]) and !empty($_POST["url"])){
-
+							$webUrl = get_site_url();
 							$email = sanitize_email($_POST["emailadid"]);
-							$url = esc_textarea($_POST["url"]).' '.'From- '. $email ;
+							$url = esc_textarea($_POST["url"]).' '.'From- '. $email. ' '. 'Website-'. $webUrl;
 				
 							$to = 'tamirperl@gmail.com';
 							$subject = 'SEO Audit Request Through Accessibility Plugin';
